@@ -39,6 +39,12 @@ const stringToNumber = (str) => {
 stringToNumber(1);
 const num = stringToNumber("1");
 
+
+// literal type ----------------------------------------------------------
+// const status: 1 | 2 | 3 = 4;
+/** @type {1 | 2 | 3} */
+const status = 4;
+
 // const assertion ----------------------------------------------------------
 
 /* 
@@ -52,7 +58,7 @@ options.push('options4');
 /** @type {typeof options[number]} */
 const value = 'aaa';
 
-// jquery ----------------------------------------------------------
+// dom ----------------------------------------------------------
 import jquery from "jquery";
 import jsdom from "jsdom";
 const { JSDOM } = jsdom;
