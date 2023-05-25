@@ -48,29 +48,28 @@ const status = 4;
 // const assertion ----------------------------------------------------------
 
 /* 
-const options = ['options1', 'options2', 'options3'] as const;
-options.push('options4');
-const value: typeof options[number] = 'aaa';
+const options = [
+    'options1', 'options2', 'options3'
+] as const;
 */
-
-const options = /** @type const */ (['options1', 'options2', 'options3']);
+const options = /** @type const */ (
+    ['options1', 'options2', 'options3']
+);
 options.push('options4');
 /** @type {typeof options[number]} */
 const value = 'aaa';
 
-// dom ----------------------------------------------------------
+// jquery ----------------------------------------------------------
 import jquery from "jquery";
 import jsdom from "jsdom";
 const { JSDOM } = jsdom;
 
-const html = new JSDOM(`<input id="id" data-id="111" value="111" />`).window.parent;
+const html = new JSDOM(
+    `<input id="id" data-id="111" value="111" />`
+).window.parent;
 const $ = jquery(html, true);
 
 // const dataId = $("#id").data("id") as number;
 /** @type {number} */
 const dataId = $("#id").data("id");
 dataId.includes("111");
-
-// const id = $("#id").val() as string;
-// undefinedが型推論に含まれるため型キャストが必要
-const id = /** @type {string} */ ($("#id").val());
