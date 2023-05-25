@@ -1,1 +1,1 @@
-# ts-check-test
+# ts-check-sample
